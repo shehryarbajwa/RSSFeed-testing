@@ -32,9 +32,12 @@ $(function() {
          * and that the URL is not empty.
          */
 
-         it('url defined', function(){
-           
-         })
+         it('url and name defined', function(){
+            for (let feed of allFeeds){
+              expect(feed.url).toBeDefined();
+              expect(feed.name).toBeDefined();
+            }
+         });
 
 
         /* TODO: Write a test that loops through each feed
