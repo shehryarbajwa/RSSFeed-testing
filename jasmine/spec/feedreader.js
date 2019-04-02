@@ -78,7 +78,9 @@ $(function() {
       })
 
       describe('Initial entries', function(){
-        
+
+        it('')
+
       })
 
 
