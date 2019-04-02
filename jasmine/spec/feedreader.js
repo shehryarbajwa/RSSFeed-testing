@@ -66,6 +66,11 @@ $(function() {
           const body = document.querySelector('body');
           const on = document.querySelector('.menu-icon-link')
 
+          on.click();
+
+          expect(body.classList.contains('menu-hidden')).toBe(false);
+
+          on.click();
           expect(body.classList.contains('menu-hidden')).toBe(true);
         })
 
