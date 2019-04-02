@@ -60,10 +60,14 @@ $(function() {
 
         it('menu is hidden', function(){
             const body = document.querySelector('body');
-
             expect(body.classList.contains('menu-hidden')).toBe(true);
         });
+        it('on and off', function(){
+          const body = document.querySelector('body');
+          const on = document.querySelector('.menu-icon-link')
 
+          expect(body.classList.contains('menu-hidden')).toBe(true);
+        })
 
 
       })
