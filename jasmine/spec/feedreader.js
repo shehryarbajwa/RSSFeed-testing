@@ -77,12 +77,6 @@ $(function() {
 
       })
 
-      describe('Initial entries', function(){
-
-        it('')
-
-      })
-
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -104,6 +98,18 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+         describe('Initial entries', function(){
+           beforeEach(function(done){
+             loadFeed(0, done);
+           });
+
+           it('atleast one feed loaded', function(){
+             const feed = document.querySelector('.feed');
+             expect(feed.children.length > 0).toBe(true);
+           });
+
+         })
 
     /* TODO: Write a new test suite named "New Feed Selection" */
 
