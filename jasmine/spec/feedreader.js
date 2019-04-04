@@ -58,24 +58,7 @@ $(function() {
 
       describe('The menu', function(){
 
-        it('menu is hidden', function(){
-            const body = document.querySelector('body');
-            expect(body.classList.contains('menu-hidden')).toBe(true);
-        });
-        it('on and off', function(){
-          const body = document.querySelector('body');
-          const on = document.querySelector('.menu-icon-link')
 
-          on.click();
-
-          expect(body.classList.contains('menu-hidden')).toBe(false);
-
-          on.click();
-          expect(body.classList.contains('menu-hidden')).toBe(true);
-        })
-
-
-      })
 
 
         /* TODO: Write a test that ensures the menu element is
@@ -84,11 +67,30 @@ $(function() {
          * hiding/showing of the menu element.
          */
 
+         it('menu is hidden', function(){
+             const body = document.querySelector('body');
+             expect(body.classList.contains('menu-hidden')).toBe(true);
+         });
+
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+          it('on and off', function(){
+            const body = document.querySelector('body');
+            const on = document.querySelector('.menu-icon-link')
+
+            on.click();
+
+            expect(body.classList.contains('menu-hidden')).toBe(false);
+
+            on.click();
+            expect(body.classList.contains('menu-hidden')).toBe(true);
+          })
+
+  });
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -117,4 +119,16 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+         describe('New Feed Selection', function(){
+           beforeEach(function(done){
+             loadFeed(0);
+             console.log(loadFeed.children.innerText);
+             loadFeed(1, done);
+           }
+
+           it('Testing all feed entries', function(){
+             console.log("Was it successful?")
+           })
+         })
 }());
