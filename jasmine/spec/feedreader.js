@@ -120,17 +120,24 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
          describe('New Feed Selection', function(){
-           // const feed = document.querySelector('.feed');
-           // const feedArray = [];
+           const feed = document.querySelector('.feed');
+           const feedArray = [];
 
            beforeEach(function(done){
              loadFeed(0);
-             console.log(feed.children[0].innertext);
-             loadFeed(1, done);
-           })
+             Array.from(feed.children).forEach(function(entry){
+               feedArray.push(entry.innerText);
+             });
+             loadFeed(1,done);
+           });
 
-           it('Testing whether content changes', function(){
-              console.log(feed.children[0].innerText);
+
+           it('Testing whether the content changes', function(){
+             Array.from(feed.children).forEach(function(entry, index){
+               console.log(entry.innerText, feedArray[index].innerText, entry.innerText === feedArray[index]);
+               expect(entry.innerText === feedArray[index]).toBe(false);
+               expect(entry.innerText, feedArray[index].innerText, entry.innerText === feedArray[index]);
+             });
             });
 
          })
