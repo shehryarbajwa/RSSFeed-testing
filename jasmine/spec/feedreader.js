@@ -90,7 +90,7 @@ $(function() {
             expect(body.classList.contains('menu-hidden')).toBe(true);
           })
 
-  });
+  })
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -119,16 +119,19 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-
          describe('New Feed Selection', function(){
+           // const feed = document.querySelector('.feed');
+           // const feedArray = [];
+
            beforeEach(function(done){
              loadFeed(0);
-             console.log(loadFeed.children.innerText);
+             console.log(feed.children[0].innertext);
              loadFeed(1, done);
-           }
-
-           it('Testing all feed entries', function(){
-             console.log("Was it successful?")
            })
+
+           it('Testing whether content changes', function(){
+              console.log(feed.children[0].innerText);
+            });
+
          })
 }());
