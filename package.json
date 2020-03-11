@@ -1,0 +1,22 @@
+{
+  "name": "rssfeed",
+  "version": "1.0.0",
+  "description": "Rss feed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shehryarbajwa/RSSFeed-testing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shehryarbajwa/RSSFeed-testing/issues"
+  },
+  "homepage": "https://github.com/shehryarbajwa/RSSFeed-testing#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
